@@ -1,17 +1,17 @@
 #' Read climate time series in tidy long form
 #' @name read_climate_ts
 #' @importFrom magrittr %>%
-#' @param name One of "hadcrut5", "gistemp", others ...TODO
+#' @param name One of "hadcrut", "gistemp", "noaa", "berkeley" ...TODO
 #'
 #' @param resolution Either "monthly" or "annual".
 #' @param pad_last_year Pad months to the end of last year with NAs.
 #'
-#' @return Tidy climate data set
+#' @return Tidy, long form climate time series data set.
 #' @export
 
 read_climate_ts <- function(name = "hadcrut5", resolution = "monthly", pad_last_year = FALSE) {
 
-  if (name == "hadcrut5") {
+  if (name == "hadcrut") {
 
     data <- read_hadcrut5()
 
@@ -23,7 +23,11 @@ read_climate_ts <- function(name = "hadcrut5", resolution = "monthly", pad_last_
 
     data <- read_noaa()
 
-  }  else {
+  } else if (name == "berkeley") {
+
+    data <- read_berkeley()
+
+  } else {
     stop("Name not recognized.")
   }
 
