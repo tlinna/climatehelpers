@@ -5,20 +5,20 @@
 \title{Read climate time series in tidy long form}
 \usage{
 read_climate_ts(
-  name = "hadcrut5",
+  name = "hadcrut",
   resolution = "monthly",
   pad_last_year = FALSE
 )
 }
 \arguments{
-\item{name}{One of "hadcrut5", "gistemp", others ...TODO}
+\item{name}{One of "hadcrut", "gistemp", "noaa", "berkeley" ...TODO}
 
 \item{resolution}{Either "monthly" or "annual".}
 
 \item{pad_last_year}{Pad months to the end of last year with NAs.}
 }
 \value{
-Tidy climate data set
+Tidy, long form climate time series data set.
 }
 \description{
 Read climate time series in tidy long form

@@ -9,7 +9,7 @@
 #' @return Tidy, long form climate time series data set.
 #' @export
 
-read_climate_ts <- function(name = "hadcrut5", resolution = "monthly", pad_last_year = FALSE) {
+read_climate_ts <- function(name = "hadcrut", resolution = "monthly", pad_last_year = FALSE) {
 
   if (name == "hadcrut") {
 
