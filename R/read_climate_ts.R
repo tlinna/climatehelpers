@@ -9,11 +9,11 @@
 #' @param name One of "hadcrut", "gistemp", "noaa", "berkeley".
 #'
 #' @param resolution Either "monthly" or "annual".
-#' @param pad_last_year Pad months to the end of last year with NAs.
-#' If resolution is annual, last partial year is averaged and included in the data.
+#' @param pad_last_year
+#' Pad months to the end of last year with NAs. If resolution is annual, last
+#' partial year is then averaged and included in the data.
 #'
-#'
-#' @param baseline Baseline start and end year in a vector.
+#' @param baseline Baseline start and end year as a vector.
 #'
 #' @return Tidy, long form climate time series data set.
 #' @export
