@@ -1,7 +1,7 @@
 globalVariables(c("Name", "Year", "Month", "Year_dec", "Datetime", "Time_char",
                   "data", "%>%", "!!", ":=", "::", "Anomaly (deg C)", "Lower confidence limit (2.5%)",
                   "Time", "Upper confidence limit (97.5%)", "everything", "last_month", "nas_tibble",
-                  "Temperature", "X1", "X2", "X3", "str_detect", "suppress_warnings"))
+                  "Temperature", "X1", "X2", "X3", "str_detect"))
 
 #' Pad empty month rows to the end of last year
 #'

@@ -7,13 +7,18 @@
 
 read_berkeley <- function() {
 
-  data <- suppress_warnings(
-    readr::read_table2("http://berkeleyearth.lbl.gov/auto/Global/Land_and_Ocean_complete.txt",
-                             col_names = FALSE, skip = 86)) %>%
-    dplyr::rename(Year = X1,
-                  Month = X2,
-                  Temperature = X3) %>%
-    dplyr::select(Year, Month, Temperature)
+  pkgcond::suppress_warnings(
+    pkgcond::suppress_messages(
+      data <- readr::read_table2("http://berkeleyearth.lbl.gov/auto/Global/Land_and_Ocean_complete.txt",
+                                 col_names = FALSE, skip = 86) %>%
+        dplyr::rename(Year = X1,
+                      Month = X2,
+                      Temperature = X3) %>%
+        dplyr::select(Year, Month, Temperature)
+    )
+  )
+
+
 
   # Since there are two tables in the source file, find NA rows and slice the head
 
@@ -28,4 +33,4 @@ read_berkeley <- function() {
 
   return(data)
 
- }
+}

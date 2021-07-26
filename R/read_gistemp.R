@@ -7,23 +7,26 @@
 
 read_gistemp <- function() {
 
-  data <-
-    readr::read_csv("https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv",
-                    na = "***", skip = 1) %>%
-    dplyr::rename("1" = "Jan",
-                  "2" = "Feb",
-                  "3" = "Mar",
-                  "4" = "Apr",
-                  "5" = "May",
-                  "6" = "Jun",
-                  "7" = "Jul",
-                  "8" = "Aug",
-                  "9" = "Sep",
-                  "10" = "Oct",
-                  "11" = "Nov",
-                  "12" = "Dec") %>%
-    dplyr::select(Year:"12") %>%
-    tidyr::pivot_longer("1":"12", names_to = "Month", values_to = "Temperature")
+  pkgcond::suppress_messages(
+    data <-
+      readr::read_csv("https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv",
+                      na = "***", skip = 1) %>%
+      dplyr::rename("1" = "Jan",
+                    "2" = "Feb",
+                    "3" = "Mar",
+                    "4" = "Apr",
+                    "5" = "May",
+                    "6" = "Jun",
+                    "7" = "Jul",
+                    "8" = "Aug",
+                    "9" = "Sep",
+                    "10" = "Oct",
+                    "11" = "Nov",
+                    "12" = "Dec") %>%
+      dplyr::select(Year:"12") %>%
+      tidyr::pivot_longer("1":"12", names_to = "Month", values_to = "Temperature")
+  )
+
   data$Month <- as.integer(data$Month)
 
 
