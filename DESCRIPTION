@@ -1,0 +1,25 @@
+Package: climatehelpers
+Type: Package
+Title: Helper functions for climate time series data
+Version: 0.1.0
+Author: Tapani Linnaluoto
+Maintainer: Tapani Linnaluoto <tapani.linnaluoto@gmail.com>
+Description: Some helper functions to download and prepare common climate time series tidy data for use.
+URL: https://github.com/tlinna/climatehelpers
+BugReports: https://github.com/tlinna/climatehelpers/issues
+License: CC BY 4.0
+Encoding: UTF-8
+LazyData: true
+Suggests:
+    tidyverse
+Imports:
+    readr,
+    dplyr,
+    magrittr,
+    lubridate,
+    stringr,
+    rvest,
+    tibble,
+    tidyr,
+    pkgcond
+RoxygenNote: 7.1.1
