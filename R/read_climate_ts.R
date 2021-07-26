@@ -1,11 +1,18 @@
-#' Read climate time series in tidy long form
+#' Download and read climate time series
+#'
+#' A helper function to load up-to-date common climate timeseries
+#' data sets, and to format them in consistently named tidy long form data.
+#'
 #' @name read_climate_ts
 #' @importFrom magrittr %>%
 #'
-#' @param name One of "hadcrut", "gistemp", "noaa", "berkeley" ...TODO
+#' @param name One of "hadcrut", "gistemp", "noaa", "berkeley".
 #'
 #' @param resolution Either "monthly" or "annual".
 #' @param pad_last_year Pad months to the end of last year with NAs.
+#' If resolution is annual, last partial year is averaged and included in the data.
+#'
+#'
 #' @param baseline Baseline start and end year in a vector.
 #'
 #' @return Tidy, long form climate time series data set.
