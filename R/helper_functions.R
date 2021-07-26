@@ -60,3 +60,21 @@ scrape_noaa_url <- function() {
   return(noaa_url)
 
 }
+
+#' Title
+#'
+#' @param data Tidy dataset
+#' @param baseline Baseline start and end year in a vector
+#'
+#' @return Tidy dataset with selected baseline
+#'
+
+change_baseline <- function(data, baseline) {
+
+  baseline_data <- data %>% dplyr::filter(Year >= baseline[1], Year <= baseline[2])
+  mean_temperature <- mean(baseline_data$Temperature)
+
+  data$Temperature <- data$Temperature - mean_temperature
+
+  return(data)
+}

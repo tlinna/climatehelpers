@@ -1,15 +1,18 @@
 #' Read climate time series in tidy long form
 #' @name read_climate_ts
 #' @importFrom magrittr %>%
+#'
 #' @param name One of "hadcrut", "gistemp", "noaa", "berkeley" ...TODO
 #'
 #' @param resolution Either "monthly" or "annual".
 #' @param pad_last_year Pad months to the end of last year with NAs.
+#' @param baseline Baseline start and end year in a vector.
 #'
 #' @return Tidy, long form climate time series data set.
 #' @export
 
-read_climate_ts <- function(name = "hadcrut", resolution = "monthly", pad_last_year = FALSE) {
+read_climate_ts <- function(name = "hadcrut", resolution = "monthly", pad_last_year = FALSE,
+                            baseline = c(1881,1920)) {
 
   if (name == "hadcrut") {
 
@@ -50,6 +53,8 @@ read_climate_ts <- function(name = "hadcrut", resolution = "monthly", pad_last_y
   } else {
     stop("Resolution not recognized.")
   }
+
+  data <- change_baseline(data, baseline)
 
   return(data)
 }

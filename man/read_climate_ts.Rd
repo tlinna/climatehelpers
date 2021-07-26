@@ -7,7 +7,8 @@
 read_climate_ts(
   name = "hadcrut",
   resolution = "monthly",
-  pad_last_year = FALSE
+  pad_last_year = FALSE,
+  baseline = c(1881, 1920)
 )
 }
 \arguments{
@@ -16,6 +17,8 @@ read_climate_ts(
 \item{resolution}{Either "monthly" or "annual".}
 
 \item{pad_last_year}{Pad months to the end of last year with NAs.}
+
+\item{baseline}{Baseline start and end year in a vector.}
 }
 \value{
 Tidy, long form climate time series data set.
