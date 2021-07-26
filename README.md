@@ -11,7 +11,7 @@ devtools::install_github("tlinna/climatehelpers")
 
 ## Usage
 
-Download and read data with the read_climate_ts function.
+Download and read data with the read_climate_ts function. You can also pad last, partial year with NAs, which is then included when averaging annual data. The data is then baselined, and you can provide baseline start and end years if necessary.
 
 ```r
 data <- read_climate_ts(
@@ -21,3 +21,14 @@ data <- read_climate_ts(
   baseline = c(1881, 1920)
 )
 ```
+
+Common columns provided are Name, Year, Month, Year_dec, Datetime and Temperature. With HadCRUT5 95% CI boundaries are also provided.
+
+## Data
+
+Currently you can download following global data in either monthly or annual resolution:
+
+- HadCRUT 5.0.1.0
+- GISTEMP v4
+- NOAA GlobalTemp v5
+- Berkeley Earth
