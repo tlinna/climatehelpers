@@ -26,7 +26,7 @@ Common columns provided are Name, Year, Month, Year_dec, Datetime and Temperatur
 
 ## Data
 
-Currently you can download following global data in either monthly or annual resolution:
+Currently you can download following global time series data in either monthly or annual resolution:
 
 - HadCRUT 5.0.1.0
 - GISTEMP v4
