@@ -4,7 +4,7 @@ Helper R function to download common climate time series data in tidy long forma
 
 ## Installation
 
-Install with devtools:
+Install with package devtools:
 ```r
 devtools::install_github("tlinna/climatehelpers")
 ```
@@ -18,7 +18,7 @@ data <- read_climate_ts(
   name = "hadcrut",
   resolution = "monthly",
   pad_last_year = FALSE,
-  baseline = c(1881, 1920)
+  baseline = c(1880, 1919)
 )
 ```
 
@@ -26,7 +26,7 @@ Common columns provided are Name, Year, Month, Year_dec, Datetime and Temperatur
 
 ## Data
 
-Currently you can download following global time series data in either monthly or annual resolution:
+Currently the function is working with the following global time series data in either monthly or annual resolution:
 
 - HadCRUT 5.0.1.0
 - GISTEMP v4
