@@ -19,7 +19,7 @@
 #' @export
 
 read_climate_ts <- function(name = "hadcrut", resolution = "monthly", pad_last_year = FALSE,
-                            baseline = c(1881,1920)) {
+                            baseline = c(1880,1919)) {
 
   if (name == "hadcrut") {
 
