@@ -13,9 +13,9 @@
 #' Pad months to the end of last year with NAs. If resolution is annual, last
 #' partial year is then averaged and included in the data.
 #'
-#' @param baseline Baseline start and end year as a vector.
+#' @param baseline Baseline start and end year as a vector, e.g. c(1951,1980)
 #'
-#' @return Tidy, long form climate time series data set.
+#' @return Tidy, long form climate time series data set, with one observation per row.
 #' @export
 
 read_climate_ts <- function(name = "hadcrut", resolution = "monthly", pad_last_year = FALSE,
