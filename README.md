@@ -1,6 +1,6 @@
 # climatehelpers
 
-Helper R function to download common climate time series data in tidy long format.
+Helper R function(s) to download and format common climate time series data in tidy long format.
 
 ## Installation
 
@@ -32,3 +32,8 @@ Currently the function is working with the following global time series data in 
 - GISTEMP v4
 - NOAA GlobalTemp v5
 - Berkeley Earth
+
+## TODO
+
+- proper error handling and messaging
+- choice of global/hemispheres or custom latitudes or lat/lon box
