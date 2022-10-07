@@ -1,6 +1,6 @@
 # climatehelpers
 
-Helper R function(s) to download and format common climate time series data in tidy long format.
+R package with helper R function(s) to download and format common climate time series data in tidy long format.
 
 ## Installation
 
